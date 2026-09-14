@@ -1,0 +1,29 @@
+name: Deploy production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Trigger Vercel production deployment
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          set -euo pipefail
+          if [ -z "${VERCEL_DEPLOY_HOOK}" ]; then
+            echo "Missing VERCEL_DEPLOY_HOOK repository secret."
+            exit 1
+          fi
+          curl -fsS -X POST "${VERCEL_DEPLOY_HOOK}"
+          echo "Triggered a production deploy for ${GITHUB_SHA}."
