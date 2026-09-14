@@ -1,0 +1,91 @@
+"use client";
+
+export function NetworkBackground() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 -z-10 bg-surface"
+    >
+      <svg
+        className="h-full w-full opacity-[0.08]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="network-pattern"
+            width="720"
+            height="720"
+            patternUnits="userSpaceOnUse"
+          >
+            <g fill="none" stroke="#111114" strokeWidth="1.2">
+              <g transform="translate(40 50)">
+                <circle cx="40" cy="30" r="7" fill="#111114" stroke="none" />
+                <circle cx="110" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="160" cy="80" r="7" fill="#111114" stroke="none" />
+                <circle cx="90" cy="110" r="7" fill="#111114" stroke="none" />
+                <circle cx="30" cy="90" r="7" fill="#111114" stroke="none" />
+                <circle cx="130" cy="150" r="7" fill="#111114" stroke="none" />
+                <path d="M40 30L110 20L160 80L90 110L30 90L40 30M90 110L160 80M90 110L130 150L160 80" />
+              </g>
+              <g transform="translate(280 80)">
+                <circle cx="50" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="120" cy="50" r="7" fill="#111114" stroke="none" />
+                <circle cx="80" cy="110" r="7" fill="#111114" stroke="none" />
+                <circle cx="20" cy="80" r="7" fill="#111114" stroke="none" />
+                <circle cx="150" cy="110" r="7" fill="#111114" stroke="none" />
+                <path d="M50 20L120 50L80 110L20 80L50 20M120 50L150 110L80 110" />
+              </g>
+              <g transform="translate(500 40)">
+                <circle cx="30" cy="40" r="7" fill="#111114" stroke="none" />
+                <circle cx="100" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="150" cy="70" r="7" fill="#111114" stroke="none" />
+                <circle cx="90" cy="120" r="7" fill="#111114" stroke="none" />
+                <circle cx="20" cy="110" r="7" fill="#111114" stroke="none" />
+                <path d="M30 40L100 20L150 70L90 120L20 110L30 40M100 20L90 120" />
+              </g>
+              <g transform="translate(60 320)">
+                <circle cx="40" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="110" cy="40" r="7" fill="#111114" stroke="none" />
+                <circle cx="80" cy="110" r="7" fill="#111114" stroke="none" />
+                <circle cx="20" cy="90" r="7" fill="#111114" stroke="none" />
+                <circle cx="150" cy="90" r="7" fill="#111114" stroke="none" />
+                <path d="M40 20L110 40L80 110L20 90L40 20M110 40L150 90L80 110" />
+              </g>
+              <g transform="translate(340 360)">
+                <circle cx="30" cy="30" r="7" fill="#111114" stroke="none" />
+                <circle cx="100" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="140" cy="80" r="7" fill="#111114" stroke="none" />
+                <circle cx="70" cy="120" r="7" fill="#111114" stroke="none" />
+                <circle cx="20" cy="90" r="7" fill="#111114" stroke="none" />
+                <path d="M30 30L100 20L140 80L70 120L20 90L30 30M100 20L70 120" />
+              </g>
+              <g transform="translate(520 340)">
+                <circle cx="40" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="110" cy="50" r="7" fill="#111114" stroke="none" />
+                <circle cx="70" cy="110" r="7" fill="#111114" stroke="none" />
+                <circle cx="10" cy="80" r="7" fill="#111114" stroke="none" />
+                <path d="M40 20L110 50L70 110L10 80L40 20M110 50L70 110" />
+              </g>
+              <g transform="translate(180 540)">
+                <circle cx="50" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="120" cy="40" r="7" fill="#111114" stroke="none" />
+                <circle cx="90" cy="110" r="7" fill="#111114" stroke="none" />
+                <circle cx="20" cy="90" r="7" fill="#111114" stroke="none" />
+                <circle cx="150" cy="100" r="7" fill="#111114" stroke="none" />
+                <path d="M50 20L120 40L90 110L20 90L50 20M120 40L150 100L90 110" />
+              </g>
+              <g transform="translate(480 540)">
+                <circle cx="30" cy="30" r="7" fill="#111114" stroke="none" />
+                <circle cx="100" cy="20" r="7" fill="#111114" stroke="none" />
+                <circle cx="140" cy="80" r="7" fill="#111114" stroke="none" />
+                <circle cx="70" cy="120" r="7" fill="#111114" stroke="none" />
+                <path d="M30 30L100 20L140 80L70 120L30 30" />
+              </g>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#network-pattern)" />
+      </svg>
+    </div>
+  );
+}
