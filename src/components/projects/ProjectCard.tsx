@@ -30,15 +30,16 @@ export function ProjectCard({
       <motion.button
         type="button"
         onClick={onOpen}
+        aria-label={`View ${project.title}`}
         initial="rest"
         whileHover="hover"
         whileFocus="hover"
         variants={cardVariants}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="relative flex h-full min-h-[260px] w-full flex-col items-center justify-center rounded-2xl border border-line px-6 py-12 text-center shadow-[0_8px_30px_rgba(17,17,20,0.05)] sm:min-h-[300px] sm:px-8 sm:py-16"
+        className="relative flex h-full min-h-[260px] w-full flex-col items-center justify-center rounded-2xl border border-line px-5 py-12 text-center shadow-[0_8px_30px_rgba(17,17,20,0.05)] sm:min-h-[300px] sm:px-7 sm:py-16"
       >
-        <h3 className="max-w-[12ch] font-display text-3xl leading-tight font-bold text-balance">
-          {project.title}
+        <h3 className="max-w-[18rem] font-display text-xl leading-snug font-bold text-balance sm:text-2xl">
+          {project.headline}
         </h3>
         <span
           aria-hidden="true"

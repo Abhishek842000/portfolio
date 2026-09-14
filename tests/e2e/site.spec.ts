@@ -46,9 +46,13 @@ test("project card hover reveals view project and modal is centered", async ({
   page,
 }) => {
   await page.goto("/#projects");
-  await expect(page.getByRole("heading", { name: "Nflexon" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "Field app for QR-scanning, certifying, and tracing LAN installs",
+    }),
+  ).toBeVisible();
 
-  const card = page.getByRole("button", { name: /ClaimGuard/ });
+  const card = page.getByRole("button", { name: /View ClaimGuard/ });
   const viewLabel = card.getByText("View project");
   await expect(viewLabel).toHaveCSS("opacity", "0");
   await card.hover();

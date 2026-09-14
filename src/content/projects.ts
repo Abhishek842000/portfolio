@@ -6,6 +6,7 @@ export interface ProjectSection {
 export interface Project {
   slug: string;
   title: string;
+  headline: string;
   tags: string[];
   summary: string;
   sections: ProjectSection[];
@@ -19,6 +20,7 @@ export const projects: Project[] = [
   {
     slug: "claimguard",
     title: "ClaimGuard",
+    headline: "Multi-agent insurance claims triage and fraud detection",
     tags: [
       "LangGraph",
       "FastAPI",
@@ -54,6 +56,7 @@ export const projects: Project[] = [
   {
     slug: "waypoint",
     title: "Waypoint",
+    headline: "Multi-tenant incident response and public status pages",
     tags: ["NestJS", "Prisma", "BullMQ", "Next.js", "Postgres", "Redis"],
     summary:
       "Multi-tenant incident response and public status pages — a PagerDuty + Statuspage hybrid.",
@@ -82,6 +85,7 @@ export const projects: Project[] = [
   {
     slug: "nflexon",
     title: "Nflexon",
+    headline: "Field app for QR-scanning, certifying, and tracing LAN installs",
     tags: ["Expo", "React Native", "Express", "Postgres", "TypeScript"],
     summary:
       "Field app for NFLEXON installers to QR-scan I/O and patch panels, record location, certify cabling, and trace LAN connections.",

@@ -23,7 +23,7 @@ export const education: EducationEntry[] = [
   },
   {
     id: "vnit-btech",
-    degree: "Bachelor of Technology in Computer Engineering",
+    degree: "Bachelor of Technology",
     institution: "Visvesvaraya National Institute of Technology",
     location: "Nagpur, India",
     dates: "05/2022",
