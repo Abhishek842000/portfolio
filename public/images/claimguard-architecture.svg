@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420">
+  <rect width="960" height="420" fill="#fffcf7"/>
+  <text x="40" y="42" font-family="Georgia, serif" font-size="20" fill="#1c1916">ClaimGuard flow</text>
+  <rect x="40" y="80" width="160" height="64" rx="12" fill="#e4eef6" stroke="#184e77"/>
+  <text x="120" y="108" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">PDF / photos</text>
+  <text x="120" y="126" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">/ notes</text>
+  <rect x="260" y="52" width="170" height="56" rx="12" fill="#fffcf7" stroke="#ddd6c8"/>
+  <text x="345" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">Next.js dashboard</text>
+  <rect x="260" y="128" width="170" height="56" rx="12" fill="#fffcf7" stroke="#ddd6c8"/>
+  <text x="345" y="161" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">FastAPI + API key</text>
+  <rect x="490" y="88" width="170" height="64" rx="12" fill="#fffcf7" stroke="#ddd6c8"/>
+  <text x="575" y="116" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">Redis / Celery</text>
+  <text x="575" y="134" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">claims queue</text>
+  <rect x="720" y="40" width="200" height="64" rx="12" fill="#184e77"/>
+  <text x="820" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#fffcf7">LangGraph worker</text>
+  <text x="820" y="86" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#e4eef6">5 agents, fail closed</text>
+  <rect x="720" y="128" width="200" height="56" rx="12" fill="#fffcf7" stroke="#ddd6c8"/>
+  <text x="820" y="161" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">Postgres + pgvector</text>
+  <rect x="720" y="204" width="200" height="48" rx="12" fill="#fffcf7" stroke="#ddd6c8"/>
+  <text x="820" y="233" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#1c1916">Langfuse traces</text>
+  <path d="M200 112 H250" stroke="#184e77" stroke-width="1.5"/>
+  <path d="M430 80 H480" stroke="#184e77" stroke-width="1.5"/>
+  <path d="M430 156 H490" stroke="#184e77" stroke-width="1.5"/>
+  <path d="M660 120 H720" stroke="#184e77" stroke-width="1.5"/>
+  <text x="40" y="290" font-family="system-ui, sans-serif" font-size="13" fill="#5e584e">LangGraph: intake to parallel vision / fraud / policy, then adjudicator.</text>
+  <text x="40" y="312" font-family="system-ui, sans-serif" font-size="13" fill="#5e584e">Human review if confidence is below 0.65 or fraud risk is above 0.45.</text>
+  <text x="40" y="334" font-family="system-ui, sans-serif" font-size="13" fill="#5e584e">Hybrid retrieval: BM25 + dense + RRF. Cited clauses must be in the retrieved set.</text>
+  <text x="40" y="356" font-family="system-ui, sans-serif" font-size="13" fill="#5e584e">Eval holdout v0 (18 cases): fraud precision 1.0, groundedness 1.0, hallucination 0.0.</text>
+  <text x="40" y="378" font-family="system-ui, sans-serif" font-size="13" fill="#5e584e">No real PII. Offline eval path is reproducible without an API key.</text>
+</svg>
