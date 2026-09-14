@@ -24,7 +24,7 @@ export function ProjectGrid() {
 
   return (
     <section id="projects" className="scroll-mt-8 px-5 py-20">
-      <h2 className="text-center font-display text-5xl font-bold tracking-[0.12em] uppercase">
+      <h2 className="px-2 text-center font-display text-4xl font-bold tracking-[0.08em] uppercase sm:text-5xl sm:tracking-[0.12em]">
         Projects
       </h2>
       <ul className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">

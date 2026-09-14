@@ -37,11 +37,11 @@ export function ProjectModal({
             exit={{ opacity: 0, scale: 0.98, y: 12 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-line px-8 py-6">
+            <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-5 sm:px-8 sm:py-6">
               <div>
                 <h2
                   id="project-modal-title"
-                  className="font-display text-3xl font-bold"
+                  className="font-display text-2xl font-bold sm:text-3xl"
                 >
                   {project.title}
                 </h2>
@@ -58,7 +58,7 @@ export function ProjectModal({
                 ×
               </button>
             </div>
-            <div className="overflow-y-auto px-8 py-6">
+            <div className="overflow-y-auto px-5 py-5 sm:px-8 sm:py-6">
               <p className="leading-relaxed">{project.summary}</p>
               {project.demoVideoSlug ? (
                 <div className="mt-6">

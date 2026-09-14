@@ -4,20 +4,22 @@ import {
   Playfair_Display,
   Silkscreen,
 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import { ContactFab } from "@/components/layout/ContactFab";
 import { HamburgerMenu } from "@/components/layout/HamburgerMenu";
 import { NetworkBackground } from "@/components/layout/NetworkBackground";
 import { ResumeUiProvider } from "@/components/layout/ResumeUi";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/content/site-config";
-import type { Metadata } from "next";
 import "./globals.css";
 
 const silkscreen = Silkscreen({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-silkscreen",
-  display: "swap",
+  display: "optional",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const playfair = Playfair_Display({
@@ -25,20 +27,32 @@ const playfair = Playfair_Display({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   variable: "--font-playfair",
-  display: "swap",
+  display: "optional",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
   display: "swap",
+  preload: false,
+  adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#F7F7F9",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -47,12 +61,30 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.fullName}`,
   },
   description: siteConfig.positioning,
+  applicationName: siteConfig.fullName,
+  authors: [{ name: siteConfig.fullName, url: siteConfig.siteUrl }],
+  creator: siteConfig.fullName,
+  keywords: [
+    "Abhishek Deshpande",
+    "software engineer",
+    "AI engineering",
+    "Dallas",
+    "TypeScript",
+    "Python",
+  ],
+  robots: { index: true, follow: true },
   openGraph: {
     title: `${siteConfig.fullName} · ${siteConfig.tagline}`,
     description: siteConfig.positioning,
+    url: siteConfig.siteUrl,
     siteName: siteConfig.fullName,
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.fullName} · ${siteConfig.tagline}`,
+    description: siteConfig.positioning,
   },
 };
 

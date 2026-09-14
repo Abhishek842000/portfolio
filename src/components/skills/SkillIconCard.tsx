@@ -1,27 +1,41 @@
 "use client";
 
-import { BrandMark } from "@/components/ui/BrandMark";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Skill } from "@/content/skills";
 
-export function SkillIconCard({ skill, index }: { skill: Skill; index: number }) {
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.38, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+export function SkillIconCard({ skill }: { skill: Skill }) {
   return (
-    <motion.li
-      className="text-center"
-      initial={{ opacity: 1, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay: index * 0.03, duration: 0.3 }}
-    >
-      <BrandMark
-        src={skill.logo}
-        alt=""
-        color={skill.brandColor}
-        size="skill"
-        dark={skill.dark}
-        inset={skill.inset ?? "padded"}
-      />
-      <span className="mt-3 block text-xs font-medium text-muted">{skill.name}</span>
+    <motion.li className="text-center" variants={itemVariants}>
+      <motion.div
+        data-skill={skill.name}
+        tabIndex={0}
+        className="skill-icon-card mx-auto flex h-[3.75rem] w-[3.75rem] items-center justify-center rounded-2xl bg-white shadow-[0_8px_22px_rgba(17,17,20,0.06)] sm:h-[4.5rem] sm:w-[4.5rem]"
+        style={{ ["--brand" as string]: skill.brandColor }}
+        whileHover={{ borderColor: skill.brandColor }}
+        whileFocus={{ borderColor: skill.brandColor }}
+        transition={{ duration: 0.2 }}
+      >
+        <Image
+          src={skill.logo}
+          alt=""
+          width={40}
+          height={40}
+          className="h-8 w-8 object-contain sm:h-10 sm:w-10"
+        />
+      </motion.div>
+      <span className="mt-2.5 block text-xs font-medium text-muted">
+        {skill.name}
+      </span>
     </motion.li>
   );
 }

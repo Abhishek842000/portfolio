@@ -10,13 +10,13 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="flex min-h-screen flex-col items-center justify-center px-5 py-24 text-center"
+      className="flex min-h-[100svh] flex-col items-center justify-center px-5 py-24 text-center"
     >
       <Avatar />
-      <h1 className="mt-10 px-3 font-pixel text-[clamp(1.35rem,5vw,3.5rem)] tracking-[0.08em] text-ink uppercase whitespace-nowrap">
+      <h1 className="mt-8 px-2 font-pixel text-[clamp(1.15rem,6.4vw,3.5rem)] leading-tight tracking-[0.06em] text-ink uppercase sm:mt-10 sm:px-3 sm:tracking-[0.08em] sm:whitespace-nowrap">
         {siteConfig.fullName}
       </h1>
-      <p className="mt-6 font-display text-sm tracking-[0.32em] text-ink uppercase">
+      <p className="mt-5 max-w-[22rem] font-display text-[0.7rem] tracking-[0.18em] text-ink uppercase sm:mt-6 sm:max-w-none sm:text-sm sm:tracking-[0.32em]">
         {siteConfig.roles.join("  |  ")}
       </p>
       <button

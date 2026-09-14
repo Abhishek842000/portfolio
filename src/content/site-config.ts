@@ -23,7 +23,10 @@ export function getSiteUrl(): string {
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
-  return "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3012";
 }
 
 export const siteConfig: SiteConfig = {
@@ -49,8 +52,9 @@ export const siteConfig: SiteConfig = {
 export const navLinks = [
   { href: "#top", label: "Home" },
   { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
-  { href: "#publication", label: "Publication" },
+  { href: "#publication", label: "Publications" },
   { href: "#skills", label: "Skills" },
   { href: "#connect", label: "Contact" },
 ] as const;

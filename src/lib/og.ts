@@ -31,13 +31,13 @@ export function buildMetadata({
       siteName: siteConfig.fullName,
       locale: "en_US",
       type: "website",
-      images: image ? [{ url: image }] : undefined,
+      ...(image ? { images: [{ url: image }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
-      images: image ? [image] : undefined,
+      ...(image ? { images: [image] } : {}),
     },
   };
 }

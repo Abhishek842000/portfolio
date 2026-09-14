@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/og";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Page not found",
+  description: "That URL is not on Abhishek Deshpande’s portfolio.",
+  path: "/",
+});
 
 export default function NotFound() {
   return (

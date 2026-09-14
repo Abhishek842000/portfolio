@@ -24,20 +24,20 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
       {groups.map((group, groupIndex) => (
         <motion.li
           key={group.yearLabel}
-          className="grid gap-6 md:grid-cols-[88px_1fr] md:items-start"
+          className="grid gap-3 md:grid-cols-[88px_1fr] md:items-start md:gap-6"
           initial={{ y: 16 }}
           whileInView={{ y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: groupIndex * 0.05, duration: 0.4 }}
         >
-          <p className="pt-6 font-mono text-sm text-muted">{group.yearLabel}</p>
-          <article className="rounded-2xl border border-line bg-card p-8 shadow-[0_8px_30px_rgba(17,17,20,0.06)]">
+          <p className="font-mono text-sm text-muted md:pt-6">{group.yearLabel}</p>
+          <article className="rounded-2xl border border-line bg-card p-5 shadow-[0_8px_30px_rgba(17,17,20,0.06)] sm:p-8">
             {group.items.map((item, index) => (
               <div
                 key={item.id}
                 className={index > 0 ? "mt-6 border-t border-line pt-6" : ""}
               >
-                <h3 className="font-display text-2xl font-bold">{item.title}</h3>
+                <h2 className="font-display text-xl font-bold sm:text-2xl">{item.title}</h2>
                 <p className="mt-1 font-mono text-sm text-muted">
                   <span
                     className={`mr-2 inline-block h-2 w-2 rounded-full ${
@@ -49,7 +49,7 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
                 </p>
               </div>
             ))}
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               {group.items[0]?.logo ? (
                 <BrandMark
                   src={group.items[0].logo}

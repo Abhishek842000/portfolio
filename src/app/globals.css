@@ -38,6 +38,23 @@ body {
   color: var(--ink);
 }
 
+.network-bg {
+  background-color: var(--surface);
+  background-image: url("/images/network-pattern.svg");
+  background-repeat: repeat;
+  background-size: 720px 720px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .network-bg {
+    background-attachment: scroll;
+  }
+}
+
 ::selection {
   background: #e8e8ee;
   color: var(--ink);
@@ -82,4 +99,43 @@ body {
   box-shadow:
     0 16px 34px color-mix(in srgb, var(--brand) 32%, transparent),
     0 0 0 5px color-mix(in srgb, var(--brand) 14%, transparent);
+}
+
+.publication-accent {
+  height: 6px;
+  background-color: var(--accent-blue);
+  background-image: linear-gradient(
+    90deg,
+    var(--accent-blue) 0%,
+    var(--accent-purple) 50%,
+    var(--accent-pink) 100%
+  );
+}
+
+.skill-icon-card {
+  border: 1.5px solid var(--line);
+  transform: translateY(0);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.skill-icon-card img {
+  filter: grayscale(1);
+  transition: filter 220ms ease;
+}
+
+.skill-icon-card:hover,
+.skill-icon-card:focus-visible {
+  border-color: var(--brand);
+  box-shadow:
+    0 12px 28px color-mix(in srgb, var(--brand) 28%, transparent),
+    0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent);
+  transform: translateY(-3px);
+}
+
+.skill-icon-card:hover img,
+.skill-icon-card:focus-visible img {
+  filter: none;
 }

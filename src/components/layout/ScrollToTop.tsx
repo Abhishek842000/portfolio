@@ -18,7 +18,8 @@ export function ScrollToTop() {
       {visible ? (
         <motion.button
           type="button"
-          className="fixed right-5 bottom-20 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-ink text-white shadow-md"
+          data-chrome
+          className="fixed right-4 bottom-[4.75rem] z-40 flex h-11 w-11 items-center justify-center rounded-full bg-ink text-white shadow-md sm:right-5 sm:bottom-20"
           aria-label="Back to top"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}

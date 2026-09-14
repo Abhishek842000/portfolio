@@ -35,7 +35,7 @@ export function ProjectCard({
         whileFocus="hover"
         variants={cardVariants}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="relative flex h-full min-h-[300px] w-full flex-col items-center justify-center rounded-2xl border border-line px-8 py-16 text-center shadow-[0_8px_30px_rgba(17,17,20,0.05)]"
+        className="relative flex h-full min-h-[260px] w-full flex-col items-center justify-center rounded-2xl border border-line px-6 py-12 text-center shadow-[0_8px_30px_rgba(17,17,20,0.05)] sm:min-h-[300px] sm:px-8 sm:py-16"
       >
         <h3 className="max-w-[12ch] font-display text-3xl leading-tight font-bold text-balance">
           {project.title}
@@ -50,7 +50,7 @@ export function ProjectCard({
         <motion.span
           variants={labelVariants}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute bottom-8 left-0 right-0 text-xs font-semibold tracking-[0.2em] text-ink uppercase underline decoration-ink/40 underline-offset-4"
+          className="absolute bottom-6 left-0 right-0 text-xs font-semibold tracking-[0.2em] text-ink uppercase underline decoration-ink/40 underline-offset-4 max-md:!translate-y-0 max-md:!opacity-100 sm:bottom-8"
         >
           View project
         </motion.span>
