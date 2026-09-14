@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #f7f7f9;
+  --ink: #111114;
+  --muted: #6b6b73;
+  --card: #ffffff;
+  --card-hover: #f5f0de;
+  --line: #e6e6ea;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-line: var(--line);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-pink: var(--accent-pink);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-playfair);
+  --font-pixel: var(--font-silkscreen);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+::selection {
+  background: #e8e8ee;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.brand-mark {
+  transform-origin: center;
+  cursor: pointer;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 65%
+  );
+  transform: translateX(-130%);
+}
+
+.brand-mark:hover::after,
+.brand-mark:focus-visible::after {
+  transition: transform 520ms ease;
+  transform: translateX(130%);
+}
+
+.brand-mark:hover,
+.brand-mark:focus-visible {
+  border-color: color-mix(in srgb, var(--brand) 70%, white);
+  box-shadow:
+    0 16px 34px color-mix(in srgb, var(--brand) 32%, transparent),
+    0 0 0 5px color-mix(in srgb, var(--brand) 14%, transparent);
+}
