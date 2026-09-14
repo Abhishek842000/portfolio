@@ -34,8 +34,10 @@ npm run test:e2e
 
 Vercel, default Next.js settings.
 
-1. `npx vercel login` then `npx vercel --prod`, or import `https://github.com/Abhishek842000/portfolio` in the Vercel dashboard.
-2. Set `NEXT_PUBLIC_SITE_URL` to the canonical origin (no trailing slash), e.g. `https://your-domain.com`. That value is used for Open Graph, `sitemap.xml`, and `robots.txt`.
-3. Custom domain: Project → Settings → Domains. Point the DNS A/CNAME records Vercel shows, then wait for HTTPS.
+1. Import `https://github.com/Abhishek842000/portfolio` in the Vercel dashboard (or `npx vercel login` then `npx vercel --prod`).
+2. Set `NEXT_PUBLIC_SITE_URL` to `https://abhishekdeshpande.dev`.
+3. Add `abhishekdeshpande.dev` under Project → Settings → Domains. In Cloudflare DNS (grey-cloud / DNS only):
+   - `A` `@` → `76.76.21.21`
+   - `CNAME` `www` → `cname.vercel-dns.com` (or the target Vercel displays)
 
 `/robots.txt` and `/sitemap.xml` are generated from `src/app/robots.ts` and `src/app/sitemap.ts`. The homepage and 404 route both export Open Graph + Twitter metadata; `/opengraph-image` is the share card.
