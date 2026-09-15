@@ -133,6 +133,13 @@ test("resume modal opens from the hero", async ({ page }) => {
     "src",
     /\/resume\.pdf/,
   );
+  const sheet = dialog.locator(".resume-sheet");
+  const dialogBox = await dialog.boundingBox();
+  const sheetBox = await sheet.boundingBox();
+  expect(dialogBox).toBeTruthy();
+  expect(sheetBox).toBeTruthy();
+  expect(sheetBox!.width).toBeLessThan(dialogBox!.width * 0.72);
+  expect(sheetBox!.height).toBeLessThanOrEqual(dialogBox!.height);
   await dialog.getByRole("button", { name: "Close" }).click();
   await expect(dialog).toHaveCount(0);
 });

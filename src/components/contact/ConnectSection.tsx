@@ -51,9 +51,10 @@ export function ConnectSection() {
       <h2 className="px-2 text-center font-display text-4xl font-bold tracking-[0.08em] uppercase sm:text-5xl sm:tracking-[0.12em]">
         Let&apos;s Connect
       </h2>
-      <p className="mx-auto mt-4 max-w-xl text-center text-muted">
-        I&apos;m always open to conversations about production AI systems, eval,
-        and applied ML. Feel free to reach out.
+      <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
+        I&apos;m a software engineer shipping TypeScript and Python for APIs, UI,
+        Kubernetes, and RAG that has to hold up in production. Reach out if you
+        want to talk roles, systems, or what we could build.
       </p>
       <EmailCopyField />
       <ul className="mt-8 flex justify-center gap-5">

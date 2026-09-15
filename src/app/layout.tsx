@@ -2,7 +2,6 @@ import {
   Inter,
   JetBrains_Mono,
   Playfair_Display,
-  Silkscreen,
 } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { ContactFab } from "@/components/layout/ContactFab";
@@ -12,15 +11,6 @@ import { ResumeUiProvider } from "@/components/layout/ResumeUi";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/content/site-config";
 import "./globals.css";
-
-const silkscreen = Silkscreen({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-silkscreen",
-  display: "optional",
-  preload: true,
-  adjustFontFallback: true,
-});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -97,7 +87,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${silkscreen.variable} ${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-surface font-sans text-ink">
         <a

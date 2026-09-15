@@ -29,7 +29,7 @@ export function ResumeModal({
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-[45] flex flex-col bg-white"
+          className="fixed inset-0 z-[45] flex flex-col bg-surface"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -38,10 +38,10 @@ export function ResumeModal({
           aria-modal="true"
           aria-labelledby="resume-modal-title"
         >
-          <div className="flex items-center justify-between gap-2 px-4 py-5 pl-[4.75rem] sm:gap-4 sm:px-12 sm:pl-24">
+          <div className="flex items-center justify-between gap-3 px-4 py-5 pl-[4.75rem] sm:gap-4 sm:px-12 sm:py-6 sm:pl-24">
             <h2
               id="resume-modal-title"
-              className="font-display text-lg font-bold tracking-[0.14em] uppercase sm:text-2xl sm:tracking-[0.18em]"
+              className="font-display text-xl font-bold tracking-[0.14em] uppercase sm:text-3xl sm:tracking-[0.16em]"
             >
               Resume
             </h2>
@@ -49,26 +49,28 @@ export function ResumeModal({
               <a
                 href={src}
                 download="Abhishek_Deshpande_Resume.pdf"
-                className="rounded-full bg-ink px-3 py-2 text-[10px] font-semibold tracking-[0.16em] text-white uppercase sm:px-5 sm:text-xs"
+                className="resume-pill inline-flex items-center rounded-full bg-ink px-5 py-2.5 text-xs font-semibold tracking-[0.16em] text-white uppercase sm:px-7 sm:py-3 sm:text-sm"
               >
-                Download
+                <span className="relative z-10">Download</span>
               </a>
               <button
                 type="button"
                 onClick={onClose}
-                className="flex h-9 w-9 items-center justify-center text-2xl leading-none text-muted"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-2xl leading-none text-muted transition-[background-color,color,border-color] duration-200 hover:border-ink hover:text-ink sm:h-12 sm:w-12"
                 aria-label="Close"
               >
                 ×
               </button>
             </div>
           </div>
-          <div className="min-h-0 flex-1 px-4 pb-6 sm:px-10 sm:pb-8">
-            <iframe
-              title="Resume PDF"
-              src={`${src}#toolbar=1&navpanes=1&view=FitH`}
-              className="h-full w-full rounded-2xl bg-[#2b2b2b] shadow-[0_16px_40px_rgba(17,17,20,0.18)]"
-            />
+          <div className="flex min-h-0 flex-1 items-center justify-center px-4 pb-6 sm:px-8 sm:pb-8">
+            <div className="resume-sheet relative overflow-hidden rounded-[1.1rem] bg-white shadow-[0_22px_50px_rgba(17,17,20,0.22)]">
+              <iframe
+                title="Resume PDF"
+                src={`${src}#toolbar=0&navpanes=0&scrollbar=0&view=Fit&zoom=page-fit`}
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
           </div>
         </motion.div>
       ) : null}
