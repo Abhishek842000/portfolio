@@ -63,14 +63,12 @@ export function ResumeModal({
               </button>
             </div>
           </div>
-          <div className="flex min-h-0 flex-1 items-center justify-center px-4 pb-6 sm:px-8 sm:pb-8">
-            <div className="resume-sheet relative overflow-hidden rounded-[1.1rem] bg-white shadow-[0_22px_50px_rgba(17,17,20,0.22)]">
-              <iframe
-                title="Resume PDF"
-                src={`${src}#toolbar=0&navpanes=0&scrollbar=0&view=Fit&zoom=page-fit`}
-                className="absolute inset-0 h-full w-full"
-              />
-            </div>
+          <div className="flex min-h-0 flex-1 justify-center px-4 pb-6 sm:px-8 sm:pb-8">
+            <iframe
+              title="Resume PDF"
+              src={`${src}#toolbar=1&navpanes=0&scrollbar=0&view=Fit`}
+              className="resume-frame h-full rounded-2xl bg-[#2b2b2b] shadow-[0_16px_40px_rgba(17,17,20,0.18)]"
+            />
           </div>
         </motion.div>
       ) : null}

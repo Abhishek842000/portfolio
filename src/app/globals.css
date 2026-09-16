@@ -117,6 +117,10 @@ body {
     0 0 0 5px color-mix(in srgb, var(--brand) 14%, transparent);
 }
 
+.resume-frame {
+  width: min(100%, calc((100dvh - 10.5rem) * 8.5 / 11 + 3rem));
+}
+
 .publication-accent {
   height: 6px;
   background-color: var(--accent-blue);
@@ -126,12 +130,6 @@ body {
     var(--accent-purple) 50%,
     var(--accent-pink) 100%
   );
-}
-
-.resume-sheet {
-  aspect-ratio: 8.5 / 11;
-  width: min(100%, calc((100dvh - 9.5rem) * 8.5 / 11));
-  height: auto;
 }
 
 .skill-icon-card {

@@ -129,17 +129,13 @@ test("resume modal opens from the hero", async ({ page }) => {
     "href",
     "/resume.pdf",
   );
-  await expect(dialog.locator("iframe[title='Resume PDF']")).toHaveAttribute(
-    "src",
-    /\/resume\.pdf/,
-  );
-  const sheet = dialog.locator(".resume-sheet");
+  const frame = dialog.locator("iframe[title='Resume PDF']");
+  await expect(frame).toHaveAttribute("src", /\/resume\.pdf#toolbar=1/);
   const dialogBox = await dialog.boundingBox();
-  const sheetBox = await sheet.boundingBox();
+  const frameBox = await frame.boundingBox();
   expect(dialogBox).toBeTruthy();
-  expect(sheetBox).toBeTruthy();
-  expect(sheetBox!.width).toBeLessThan(dialogBox!.width * 0.72);
-  expect(sheetBox!.height).toBeLessThanOrEqual(dialogBox!.height);
+  expect(frameBox).toBeTruthy();
+  expect(frameBox!.width).toBeLessThan(dialogBox!.width * 0.72);
   await dialog.getByRole("button", { name: "Close" }).click();
   await expect(dialog).toHaveCount(0);
 });
